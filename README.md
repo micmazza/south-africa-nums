@@ -48,7 +48,7 @@ The tables will be automatically created and updated.
 Set environment:
 
     set JAVA_HOME=C:\Program Files\Java\jdk-11.0.17
-    set PATH=%
+    set PATH=%JAVA_HOME%\bin;%PATH%
 
 
 ### Run automatic tests on Windows
