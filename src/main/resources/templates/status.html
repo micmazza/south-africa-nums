@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Phone Number Validation Result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="row mt-5">
+			<div class="col-sm">
+				<a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back</a>
+			</div>
+		</div>
+
+	    <div class="row mt-5">
+	        <div class="col-sm">
+	            <h1>File Upload Status</h1>
+
+	            <!--display error if any-->
+	            <div class="alert alert-danger" role="alert" th:if="${!status}">
+	                <strong>Error:</strong>
+	                <span th:text="${message}"></span>
+	            </div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm">
+	
+	            <!--display phones list-->
+	            <table class="table table-striped" th:if="${status}">
+	                <thead class="thead-dark">
+	                <tr>
+	                    <th scope="col"> # </th>
+	                    <th scope="col"> ID </th>
+	                    <th scope="col"> Sms Phone </th>
+	                </tr>
+	                </thead>
+	                <tbody>
+	                <tr th:each="entry, i : ${entries}">
+	                    <th scope="row" th:text="${i.index + 1}"></th>
+	                    <td th:text="${entry.id}"></td>
+	                    <td th:text="${entry.smsPhone}"></td>
+	                </tr>
+	                </tbody>
+	            </table>
+
+	   		</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

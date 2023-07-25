@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>List Phone Numbers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="row mt-5">
+			<div class="col-sm">
+				<a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back</a>
+			</div>
+		</div>
+
+		<div class="row mt-5">
+			<div class="col-sm">
+				<h1> Phone Numbers </h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm">
+
+				<table class="table table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th> Sms Phone </th>
+							<th> Status </th>
+							<th> Description </th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="phone : ${phones}">
+							<td><span th:text="${phone.smsPhone}"> Sms Phone </span></td>
+							<td><span th:text="${phone.status}"> Status </span></td>
+							<td><span th:text="${phone.description}"> Description </span></td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

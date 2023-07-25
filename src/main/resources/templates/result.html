@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Phone Number Validation Result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="row mt-5">
+			<div class="col-sm">
+				<a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back</a>
+			</div>
+		</div>
+
+		<div class="row mt-5">
+			<div class="col-sm">
+				<h1>Validation Result</h1>
+	            <div class="alert alert-primary" role="alert">
+	                <span th:text="'Phone Number ' + ${phone.smsPhone} + ': ' + ${phone.description}"></span>
+	            </div>
+
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

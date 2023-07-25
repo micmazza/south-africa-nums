@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Process Telephone Numbers CSV File</title>
+    <!--Bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+	
+	<div class="container py-5">
+	
+	    <div class="row mt-5">
+	        <div class="col-sm">
+	            <h1>Upload CSV File</h1>
+	        </div>
+	    </div>
+	    <div class="row mt-1">
+	        <div class="col-sm">
+	            <form th:action="@{/upload-csv}" enctype="multipart/form-data" method="POST">
+	                <div class="form-group mt-3">
+	                    <label for="file">Select a CSV file</label>
+	                    <input type="file" name="file" class="form-control-file" id="file" accept=".csv">
+	                </div>
+	                <button type="submit" class="btn btn-primary">Import Phones Numbers</button>
+	            </form>
+	        </div>
+	    </div>
+	
+	     <div class="row mt-5">
+	        <div class="col-sm">
+				<h1>Validate Single Phone Number</h1>
+	        </div>
+	    </div>
+	    <div class="row mt-1">
+	        <div class="col-sm">
+			    <form action="#"  th:action="@{/validate}" method="POST">
+					<div class="form-group mt-3 col-xs-4">
+					    <input type="number" id="phone" name="phone" class="form-control" placeholder="Phone number to check"/>
+					</div>
+					<button type="submit" class="btn btn-primary">Validate Phone Number</button>
+				</form>
+	        </div>
+	    </div>
+	
+	    <div class="row mt-5">
+	        <div class="col-sm">
+				<h1>Display Uploaded Phone Numbers</h1>
+	        </div>
+	    </div>
+	    <div class="row mt-3">
+	        <div class="col-sm">
+			    <form action="#"  th:action="@{/all}" method="GET">
+					<div class="form-group ">
+						<select id="numtype" name="numtype" class="custom-select" aria-label=".form-select-lg example">
+							<option selected>All</option>
+							<option value="0">Acceptable</option>
+							<option value="1">Corrected</option>
+							<option value="2">Incorrect</option>
+						</select>
+			        </div>
+					<button type="submit" class="btn btn-primary">List Phone Numbers</button>
+				</form>
+	        </div>	        
+	    </div>
+	
+	</div>
+
+</body>
+</html>
